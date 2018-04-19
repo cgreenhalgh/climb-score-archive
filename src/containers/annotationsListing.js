@@ -15,8 +15,6 @@ class AnnotationsListing extends Component {
 			const anno = annotations.filter( (annotation) => { return annotation })
 			// order by timestamp
 			anno.sort(function(a, b) { return a["dct:created"] < b["dct:created"] ? -1 : 1 })
-			console.log("--Annotations: ", anno)
-			console.log("--Props: ", this.props)
 			return ( 
 				<div className="annotationsWrapper">
 					<img src="../../images/climbMap.jpg" width="300px"/>
@@ -61,7 +59,7 @@ class AnnotationsListing extends Component {
 				</div>
 			)
 		}
-		return <div>Loading...</div>
+		return <div/>
 	}
 }
 

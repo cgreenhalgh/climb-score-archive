@@ -6,6 +6,7 @@ import { withRouter } from 'react-router';
 import Score from 'meld-clients-core/src/containers/score';
 import AnnotationsListing from 'meld-clients-core/src/containers/annotationsListing';
 import { setScoreReducerVerovioOptions } from  'meld-clients-core/src/reducers/reducer_score';
+import { performances } from '../data/performances';
 
 class ClimbArchive extends Component { 
 	constructor(props) {
@@ -13,8 +14,13 @@ class ClimbArchive extends Component {
 	}
 
 	componentDidMount() { 
-		const graphUri = this.props.location.query.session;
-		this.props.fetchSessionGraph(graphUri);
+		const perf = this.props.location.query.perf;
+		const frag = this.props.location.query.frag || "basecamp";
+		let graphUri;
+		if(perf) { 
+			graphUri = performances[perf][frag]
+			this.props.fetchSessionGraph(graphUri);
+		}
 		setScoreReducerVerovioOptions({
 				ignoreLayout: 1,
 				adjustPageHeight:1,
@@ -25,7 +31,8 @@ class ClimbArchive extends Component {
 	}
 	
 	render() { 
-		if(this.props.score.publishedScores) {
+		if(this.props.location.query.perf && 
+			this.props.score.publishedScores) {
 			let session = "";
 			let etag = "";
 			if (this.props.graph && this.props.graph.annoGraph) { 
@@ -70,7 +77,7 @@ class ClimbArchive extends Component {
 				</div>
 			)
 		}
-		return (<div>Loading...</div>);
+		return (<div>Awaiting performance selection...</div>);
 	}
 	
 };

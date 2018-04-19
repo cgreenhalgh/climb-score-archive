@@ -11,8 +11,6 @@ import ClimbArchive from './containers/climbArchive';
 
 const createStoreWithMiddleware = applyMiddleware(thunk, ReduxPromise)(createStore);
 
-console.log("Reducers: ", reducers)
-
 ReactDOM.render(
 	<Provider store={createStoreWithMiddleware(reducers)}>
 		<Router history={browserHistory}> 
