@@ -17,7 +17,6 @@ class AnnotationsListing extends Component {
 			anno.sort(function(a, b) { return a["dct:created"] < b["dct:created"] ? -1 : 1 })
 			return ( 
 				<div className="annotationsWrapper">
-					<img src="../../images/climbMap.jpg" width="300px"/>
 					<div>Events:</div>
 					{
 						anno.map( (annotation) => {
