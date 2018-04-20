@@ -4,7 +4,7 @@ import { connect } from 'react-redux' ;
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router';
 import Score from 'meld-clients-core/src/containers/score';
-import AnnotationsListing from 'meld-clients-core/src/containers/annotationsListing';
+import AnnotationsListing from '../containers/annotationsListing';
 import { setScoreReducerVerovioOptions } from  'meld-clients-core/src/reducers/reducer_score';
 import { performances } from '../data/performances';
 
@@ -25,7 +25,7 @@ class ClimbArchive extends Component {
 				ignoreLayout: 1,
 				adjustPageHeight:1,
 				scale:35,
-				pageHeight: 1000*100/35,
+				pageHeight: 700*100/35,
 				pageWidth: 700*100/35
 		});
 	}
@@ -55,7 +55,9 @@ class ClimbArchive extends Component {
 						annotations = annotations.reduce( (a, b) => a.concat(b), []);
 						return (
 							<div key={ "wrapper" + pS } >
-								 <AnnotationsListing annotations={ annotations } scoreUri={pS}/>
+								 <div id="annoList">
+									 <AnnotationsListing annotations={ annotations } scoreUri={pS}/>
+								 </div>
 								 <Score key={ pS } uri={ pS } annotations={ annotations } session={ session } etag={ etag } nextSession = { this.props.nextSession } />
 							
 								<div id="prev" key={ "prev"+pS } onClick={() => {

@@ -1,3 +1,7 @@
+#annoList { 
+	cursor:pointer;
+}
+
 .score .meld-muzicode-identify { 
 	fill: red;
 	stroke: red;
