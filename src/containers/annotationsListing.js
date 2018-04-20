@@ -43,7 +43,7 @@ class AnnotationsListing extends Component {
 																	{this.props.score.componentTargets[t["@id"]]["description"]}
 															</span> 
 													)}
-													else { return <span/> }
+													else { return <span>Muzicode triggered</span> }
 												}
 											)  
 										}
