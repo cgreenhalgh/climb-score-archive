@@ -43,7 +43,7 @@ class AnnotationsListing extends Component {
 																	{this.props.score.componentTargets[t["@id"]]["description"]}
 															</span> 
 													)}
-													else { return <span>Loading component target: {t["@id"]}</span> }
+													else { return <span/> }
 												}
 											)  
 										}
