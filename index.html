@@ -20,11 +20,12 @@
 		   return(false);
 	}
 
-	var performance = getQueryVariable("perf") || "20180221-rcc-1";
+	var performance = getQueryVariable("perf") || "";
 
 	window.addEventListener("message", 
 		function(x) { 
 			if(x.data.type === "performance") {
+				var perf = x.data.payload || ""
 				window.location.href = "http://localhost:8080/archive?perf=" + x.data.payload + "&frag=basecamp";
 			} else if(x.data.type === "fragment") { 
 				window.location.href = "http://localhost:8080/archive?perf=" + performance + "&frag=" + x.data.payload.replace("Climb_", "");
