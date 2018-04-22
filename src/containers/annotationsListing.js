@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators} from 'redux';
+import hdate from 'human-date';
+
 import { scorePageToComponentTarget } from 'meld-clients-core/src/actions/index';
 
 class AnnotationsListing extends Component {
@@ -20,6 +22,7 @@ class AnnotationsListing extends Component {
 					<div>Events:</div>
 					{
 						anno.map( (annotation) => {
+							const timestamp = new Date(annotation["dct:created"]);
 							return (
 								<div className="annotationListing" key={annotation["@id"]}>
 									<div className="annotationTarget">
@@ -48,7 +51,10 @@ class AnnotationsListing extends Component {
 											)  
 										}
 										<span className="timestamp" key={annotation["@id"] + "_time"}> 
-											(at { annotation["dct:created"] })
+											at { timestamp.getHours().toString().padStart(2, 0) + ":" + 
+											   timestamp.getMinutes().toString().padStart(2, 0) + ":" +
+											   timestamp.getSeconds().toString().padStart(2, 0) + " on " +
+											   hdate.prettyPrint(timestamp) }
 										</span>
 									</div>
 								</div>
