@@ -19,7 +19,7 @@ class AnnotationsListing extends Component {
 			anno.sort(function(a, b) { return a["dct:created"] < b["dct:created"] ? -1 : 1 })
 			return ( 
 				<div className="annotationsWrapper">
-					<div>Events:</div>
+					<div>{this.props.label}</div>
 					{
 						anno.map( (annotation) => {
 							const timestamp = new Date(annotation["dct:created"]);
@@ -63,7 +63,7 @@ class AnnotationsListing extends Component {
 					}
 				</div>
 			)
-		}
+		} else { return <div>{ this.props.label }</div>  }
 		return <div/>
 	}
 }

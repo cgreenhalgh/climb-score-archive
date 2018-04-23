@@ -18,7 +18,7 @@ class ClimbArchive extends Component {
 		const frag = this.props.location.query.frag || "basecamp";
 		let graphUri;
 		if(perf) { 
-			graphUri = performances[perf][frag]
+			graphUri = performances[perf][frag]["@id"]
 			this.props.fetchSessionGraph(graphUri);
 		}
 		setScoreReducerVerovioOptions({
@@ -56,7 +56,8 @@ class ClimbArchive extends Component {
 						return (
 							<div key={ "wrapper" + pS } >
 								 <div id="annoList">
-									 <AnnotationsListing annotations={ annotations } scoreUri={pS}/>
+									 <AnnotationsListing annotations={ annotations } scoreUri={pS} 
+									 label={performances[this.props.location.query.perf][this.props.location.query.frag]["rdfs:label"]} />
 								 </div>
 								 <Score key={ pS } uri={ pS } annotations={ annotations } session={ session } etag={ etag } nextSession = { this.props.nextSession } />
 							

@@ -19,7 +19,7 @@
       "babel-preset-stage-1": "^6.1.18",
       "human-date": "^1.4.0",
       "jslint": "^0.12.0",
-      "meld-clients-core": "oerc-music/meld-clients-core#archive",
+      "meld-clients-core": "oerc-music/meld-clients-core#archive2",
       "react": "^0.14.3",
       "react-dom": "^0.14.3",
       "react-redux": "^4.0.0",
