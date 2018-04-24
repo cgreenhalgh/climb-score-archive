@@ -24,9 +24,9 @@ class ClimbArchive extends Component {
 		setScoreReducerVerovioOptions({
 				ignoreLayout: 1,
 				adjustPageHeight:1,
-				scale:35,
-				pageHeight: 700*100/35,
-				pageWidth: 700*100/35
+				scale:30,
+				pageHeight: 700*100/40,
+				pageWidth: 700*100/40
 		});
 	}
 	
