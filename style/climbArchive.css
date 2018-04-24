@@ -33,7 +33,7 @@
 }
 
 .annotationTarget .mc_Choice.active {
-	background-color: #f00 !important;
+	background-color: #f77 !important;
 }
 
 
@@ -64,7 +64,7 @@
 }
 
 .annotationTarget .mc_Challenge.active {
-	background-color: #f00 !important;
+	background-color: #f77 !important;
 }
 
 .scorepane {
