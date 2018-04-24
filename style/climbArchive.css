@@ -2,8 +2,6 @@
 	cursor:pointer;
 }
 
-.EMPTY:parent { display:none;}
-
 .score .meld-muzicode-identify { 
 	fill: #080;
 	stroke: #080;
@@ -26,6 +24,47 @@
 	fill: #00d !important;
 	stroke: #00d !important;
 	color: #00d !important;
+}
+
+.annotationTarget .mc_Choice:hover:not(.active) {
+	fill: #c00 !important;
+	stroke: #c00 !important;
+	color: #c00 !important;
+}
+
+.annotationTarget .mc_Choice.active {
+	background-color: #f00 !important;
+}
+
+
+.annotationTarget .mc_Disklavier:hover:not(.active) {
+	fill: #00d !important;
+	stroke: #00d !important;
+	color: #00d !important;
+}
+
+.annotationTarget .mc_Disklavier.active {
+	background-color: #99f !important;
+}
+
+.annotationTarget .mc_Approaching:hover:not(.active) {
+	fill: #080;
+	stroke: #080;
+	color: #080;
+}
+
+.annotationTarget .mc_Approaching.active {
+	background-color: #0a0;
+}
+
+.annotationTarget .mc_Challenge:hover:not(.active) {
+	fill: #c00 !important;
+	stroke: #c00 !important;
+	color: #c00 !important;
+}
+
+.annotationTarget .mc_Challenge.active {
+	background-color: #f00 !important;
 }
 
 .scorepane {
@@ -69,34 +108,6 @@ button {
     width: 80px;
     margin-left: 10px;
     margin-right: 25px;
-}
-
-.motivation_muzicodeChoice { 
-	fill: slateblue;
-	stroke: slateblue; 
-	color: slateblue;
-	cursor:pointer;
-}
-
-.motivation_muzicodeChallengePassed { 
-	fill: seagreen;
-	stroke: seagreen;
-	color: seagreen;
-	cursor: pointer;
-}
-
-.motivation_muzicodeDisklavierStart { 
-	fill: orange;
-	stroke: orange;
-	color: orange;
-	cursor: pointer;
-}
-
-.motivation_muzicodeIdentify { 
-	fill: red;
-	stroke: red;
-	color: red;
-	cursor: pointer;
 }
 
 .timestamp { 

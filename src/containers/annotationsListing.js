@@ -31,10 +31,16 @@ class AnnotationsListing extends Component {
 												(t) => { 
 													if(t["@id"] in this.props.score.componentTargets) { return (
 														<span 
-															className = {annotation["oa:motivatedBy"]["@id"].replace(":", "_")} 
+															className = 
+																{annotation["oa:motivatedBy"]["@id"].replace(":", "_") + " " +
+																this.props.score.componentTargets[t["@id"]]["muzicodeType"]["@id"].replace(":", "_") }
 															title={t["@id"]} 
 															key={t["@id"]}	
-															onClick={ () => { 
+															onClick={ (e) => { 
+																console.log("WHEE", e.target)
+																document.querySelectorAll(".annotationTarget span").forEach( (t) => t.classList.remove("active") );
+																e.target.classList.add("active");
+
 																this.props.scorePageToComponentTarget(
 																	// TODO: Implement "startsWith" to pick correct
 																	// first MEI target in future
