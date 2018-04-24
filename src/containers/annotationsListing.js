@@ -19,7 +19,7 @@ class AnnotationsListing extends Component {
 			anno.sort(function(a, b) { return a["dct:created"] < b["dct:created"] ? -1 : 1 })
 			return ( 
 				<div className="annotationsWrapper">
-					<div>{this.props.label}</div>
+					<h2 className="perfFragLabel">{this.props.label}</h2>
 					{
 						anno.map( (annotation) => {
 							const timestamp = new Date(annotation["dct:created"]);

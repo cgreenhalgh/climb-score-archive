@@ -3,6 +3,11 @@
 	font-size: 0.8em;
 }
 
+#annoList .perfFragLabel { 
+	cursor:default;
+	font-size: 1.2em;
+}
+
 .score .meld-muzicode-identify { 
 	fill: #080;
 	stroke: #080;
